@@ -291,6 +291,10 @@ footer {
         align-items: center;
     }
 
+    nav > img {
+        width: unset;
+    }
+
     .Nav__control {
         display: none;
     }

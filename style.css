@@ -1,0 +1,304 @@
+:root {
+    --color-blue-main: rgb(32, 167, 220);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    position: relative;
+}
+
+.Highlight {
+    z-index: 10;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 30px 20px;
+    justify-content: space-between;
+}
+
+.Highlight > button {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--color-blue-main);
+}
+
+.Highlight > h1 {
+    font-weight: 500;
+    font-size: 5vmin;
+}
+
+header {
+    width: 100%;
+    height: 80vh;
+    background: url(assets/australian-medical-research-and-innovation-strategy-2021-26-and-the-related-priorities.png)
+        no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    z-index: 10;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    left: 0;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.462);
+}
+
+nav::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-blue-main);
+    opacity: var(--opacity, 0.5);
+    top: 0;
+    left: 0;
+    transition: 200ms ease-in-out all;
+}
+
+.Nav__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.Nav__control {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Nav__control.Nav--close::before {
+    transform: rotate(360deg);
+}
+
+.Nav__control.Nav--open::before {
+    transform: rotate(180deg);
+}
+
+.Nav__control::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content: "\f0d7";
+    color: white;
+    font-size: 24px;
+}
+
+.Nav__menu {
+    margin-left: auto;
+    text-transform: uppercase;
+    transition: 10s ease-in-out height;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    gap: 40px;
+    padding-right: 30px;
+}
+
+.Nav__menu--open {
+    display: flex;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+}
+
+.Nav__item {
+    cursor: pointer;
+    text-decoration: none;
+    /* padding-left: 30px; */
+}
+
+.Nav__item:hover {
+    text-decoration: underline;
+}
+
+.About {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.About__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.About__title {
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.About__title::after {
+    position: absolute;
+    content: url(assets/ecg.png);
+    padding-left: 10px;
+    top: -5px;
+}
+
+.About__text {
+    font-weight: 200;
+    font-size: larger;
+    line-height: 30px;
+}
+
+.Feature {
+    padding: 30px 0;
+    display: flex;
+}
+
+.Feature__list {
+    margin: 0 auto;
+    padding: 0 80px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.Feature__listItem {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+    background: url(assets/tab.png) no-repeat left center;
+    line-height: 100px;
+    padding: 0 40px;
+}
+
+.Department {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.Department > h2 {
+    position: relative;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-blue-main);
+}
+
+.Department > h2::after,
+.Department > h2::before {
+    position: absolute;
+    content: url(assets/ecg.png);
+    top: 0;
+}
+.Department > h2::after {
+    right: -60px;
+}
+
+.Department > h2::before {
+    left: -60px;
+}
+
+.Department > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.Department__items {
+    padding: 0 40px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.Department__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Department__item > img {
+    height: 200px;
+    width: auto;
+}
+
+.Department__item > span {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-blue-main);
+}
+
+.Department__itemNextButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+hr {
+    border: 2px dashed var(--color-blue-main);
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+    nav {
+        padding: 20px 50px;
+        align-items: center;
+    }
+
+    .Nav__control {
+        display: none;
+    }
+
+    .Nav__main > ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .About {
+        flex-direction: row;
+        align-items: center;
+    }
+}

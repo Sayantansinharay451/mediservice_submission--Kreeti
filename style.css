@@ -60,6 +60,10 @@ nav {
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.462);
 }
 
+nav > img {
+    width: 50%;
+}
+
 nav::before {
     z-index: -1;
     content: "";

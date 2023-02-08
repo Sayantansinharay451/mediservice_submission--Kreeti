@@ -216,7 +216,8 @@ nav a {
 }
 
 .Department > h2 {
-    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
     position: relative;
     font-weight: 500;
     font-size: 24px;
@@ -226,15 +227,16 @@ nav a {
 .Department > h2::after,
 .Department > h2::before {
     position: absolute;
+    z-index: 9;
     content: url(assets/ecg.png);
     top: 0;
 }
 .Department > h2::after {
-    right: 580px;
+    right: -60px;
 }
 
 .Department > h2::before {
-    left: 580px;
+    left: -60px;
 }
 
 .Department > div {
@@ -242,20 +244,19 @@ nav a {
     display: flex;
     height: 300px;
     align-items: center;
-    padding: 0 100px;
+    padding: 0 20px;
     justify-content: space-between;
     gap: 40px;
 }
 
 .Department__items {
     overflow: hidden;
-    width: 100%;
     display: flex;
     list-style: none;
-    gap: 100px;
 }
 
 .Department__item {
+    flex: 1 0 100%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -294,6 +295,12 @@ footer {
     text-align: center;
 }
 
+@media screen and (min-width: 768px) {
+    .Department__item {
+        flex: 0 0 50%;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     nav {
         padding: 20px 50px;
@@ -317,5 +324,14 @@ footer {
     .About {
         flex-direction: row;
         align-items: center;
+    }
+
+    .Department > div {
+        gap: 40px;
+        padding: 0 100px;
+    }
+
+    .Department__item {
+        flex: 1 0 25%;
     }
 }

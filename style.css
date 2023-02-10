@@ -135,18 +135,19 @@ nav::before {
 
 nav a {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: inherit;
     color: white;
     text-decoration: none;
 }
 
 .Nav__item {
+    font-weight: 300;
     cursor: pointer;
     text-decoration: none;
-    /* padding-left: 30px; */
 }
 
 .Nav__item:hover {
+    font-weight: 600;
     text-decoration: underline;
 }
 
@@ -166,7 +167,6 @@ nav a {
 }
 
 .About__title {
-    /* white-space: nowrap; */
     position: relative;
     text-transform: capitalize;
     font-weight: 500;

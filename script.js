@@ -1,3 +1,4 @@
+const highlight = document.querySelector(".Highlight");
 const nav = document.querySelector("nav");
 const header = document.querySelector("header");
 const navControl = document.querySelector(".Nav__control");
@@ -6,10 +7,28 @@ const navMenu = document.querySelector(".Nav__menu");
 const nextBtn = document.querySelector(".Button--next");
 const prevBtn = document.querySelector(".Button--prev");
 
+const department = document.querySelector(".Department");
 const slider = document.querySelector(".Department__items");
 const sliderItem = document.querySelectorAll(".Department__item");
 
-const observer = new window.IntersectionObserver(
+const links = document.querySelectorAll(".Nav__main a");
+
+links.forEach((ele) => {
+    const hrefId = ele.getAttribute("href").slice(1);
+    if (hrefId !== "#") {
+        const element = document.querySelector(hrefId);
+        const paddingTop = window
+            .getComputedStyle(element, null)
+            .getPropertyValue("padding-top");
+        element.style.scrollMarginTop = `${
+            highlight.clientHeight +
+            nav.clientHeight +
+            parseInt(paddingTop.slice(0, -2))
+        }px`;
+    }
+});
+
+const navObserver = new window.IntersectionObserver(
     ([entry]) => {
         if (entry.isIntersecting) {
             nav.style.setProperty("--opacity", "0.5");
@@ -25,7 +44,7 @@ const observer = new window.IntersectionObserver(
     }
 );
 
-observer.observe(header);
+navObserver.observe(header);
 
 navControl.addEventListener("click", (ele) => {
     ele.target.classList.toggle("Nav--open");
@@ -41,19 +60,66 @@ window.addEventListener("scroll", () => {
     }
 });
 
-let index = Math.floor(slider.clientWidth / sliderItem[0].clientWidth);
+let firstIndex = 0,
+    lastIndex = 0;
+let gap = Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1;
 
-console.log(index);
-
-const show = (increase) => {
-    if (index + increase < 0) {
-        index = sliderItem.length;
-    }
-    index = (index + increase) % sliderItem.length;
-    index = Math.min(Math.max(index, 0), sliderItem.length - 1);
-    console.log(index);
-    sliderItem[index].scrollIntoView({ behavior: "smooth" });
+const showBtn = () => {
+    if (firstIndex === 0) prevBtn.style.visibility = "hidden";
+    else prevBtn.style.visibility = "visible";
+    if (lastIndex === sliderItem.length - 1)
+        nextBtn.style.visibility = "hidden";
+    else nextBtn.style.visibility = "visible";
 };
 
-nextBtn.addEventListener("click", () => show(+1));
-prevBtn.addEventListener("click", () => show(-1));
+window.addEventListener("resize", () => {
+    if (
+        gap !==
+        Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1
+    ) {
+        gap = Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1;
+        if (firstIndex + gap > sliderItem.length) {
+            firstIndex = lastIndex - gap;
+            lastIndex = firstIndex + gap;
+        } else {
+            lastIndex = firstIndex + gap;
+        }
+        showBtn();
+    }
+    console.log(gap);
+    console.log("firstIndex #", firstIndex);
+    console.log("lastIndex #", lastIndex);
+});
+
+const sliderObserver = new window.IntersectionObserver(
+    ([entry]) => {
+        if (entry.isIntersecting) {
+            console.log("firstIndex", firstIndex, "lastIndex", lastIndex);
+            sliderItem[lastIndex].scrollIntoView(true);
+            sliderItem[firstIndex].scrollIntoView(true);
+        }
+    },
+    {
+        root: null,
+        threshold: 0,
+    }
+);
+
+const nextItem = () => {
+    firstIndex++;
+    lastIndex = firstIndex + gap;
+    console.log("next firstIndex", firstIndex, "lastIndex", lastIndex);
+    showBtn();
+    sliderItem[lastIndex].scrollIntoView(true);
+};
+
+const prevItem = () => {
+    firstIndex--;
+    lastIndex = firstIndex + gap;
+    console.log("prev firstIndex", firstIndex, "lastIndex", lastIndex);
+    showBtn();
+    sliderItem[firstIndex].scrollIntoView(true);
+};
+
+nextBtn.addEventListener("click", nextItem);
+prevBtn.addEventListener("click", prevItem);

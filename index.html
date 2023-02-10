@@ -19,7 +19,7 @@
     <body>
         <section class="Highlight">
             <button type="button">Make an appointment</button>
-            <h1>24 Hours open</h1>
+            <span class="Highlight__heading">24 Hours open</span>
         </section>
         <header>
             <nav>
@@ -30,20 +30,22 @@
                         class="Nav__control Nav--open"
                     ></button>
                     <ul class="Nav__menu">
-                        <li class="Nav__item"><a href="/home">home</a></li>
                         <li class="Nav__item">
-                            <a href="/services">services</a>
+                            <a href="/#">home</a>
                         </li>
-                        <li class="Nav__item"><a href="/about">about</a></li>
                         <li class="Nav__item">
-                            <a href="/contact">contact</a>
+                            <a href="/#services">services</a>
+                        </li>
+                        <li class="Nav__item"><a href="/#about">about</a></li>
+                        <li class="Nav__item">
+                            <a href="/#contact">contact</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
-            <section class="About">
+            <section class="About" id="about">
                 <img src="assets/stetho.png" alt="About image" />
                 <div class="About__content">
                     <span class="About__title"> why choose us</span>
@@ -74,7 +76,7 @@
                     <li class="Feature__listItem">lorem ipsum</li>
                 </ul>
             </section>
-            <section class="Department">
+            <section class="Department" id="services">
                 <h2>Our Department</h2>
                 <div>
                     <button class="Department__itemButton Button--prev">
@@ -131,7 +133,7 @@
             </section>
         </main>
         <hr />
-        <footer>
+        <footer id="contact">
             Copyright &copy; 2019 yummy crossing. All rights reserved.
         </footer>
     </body>

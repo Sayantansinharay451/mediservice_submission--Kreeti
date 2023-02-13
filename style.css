@@ -89,6 +89,7 @@ nav::before {
 }
 
 .Nav__main {
+    overflow: hidden;
     /* height: fit-content; */
     display: flex;
     flex-direction: column;
@@ -128,28 +129,24 @@ nav::before {
 }
 
 .Nav__menu {
-    position: relative;
-    z-index: 10;
     display: flex;
     margin-left: auto;
     text-transform: uppercase;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     list-style: none;
     gap: 40px;
     padding-right: 30px;
-    transform: translateY(-200%);
-    transition: transform 500ms linear;
+    transition: height 200ms ease-in-out;
 }
 
 .Nav__menu--close {
-    opacity: 0;
     height: 0;
-    transform: translateY(-200%);
 }
 
 .Nav__menu--open {
-    transform: translateY(0);
+    height: 200px;
 }
 
 nav a {

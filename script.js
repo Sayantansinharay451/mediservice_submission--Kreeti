@@ -88,15 +88,15 @@ window.addEventListener("resize", () => {
         }
         showBtn();
     }
-    console.log(gap);
-    console.log("firstIndex #", firstIndex);
-    console.log("lastIndex #", lastIndex);
+    // console.log(gap);
+    // console.log("firstIndex #", firstIndex);
+    // console.log("lastIndex #", lastIndex);
 });
 
 const sliderObserver = new window.IntersectionObserver(
     ([entry]) => {
         if (entry.isIntersecting) {
-            console.log("firstIndex", firstIndex, "lastIndex", lastIndex);
+            // console.log("firstIndex", firstIndex, "lastIndex", lastIndex);
             sliderItem[lastIndex].scrollIntoView(true);
             sliderItem[firstIndex].scrollIntoView(true);
         }
@@ -110,7 +110,7 @@ const sliderObserver = new window.IntersectionObserver(
 const nextItem = () => {
     firstIndex++;
     lastIndex = firstIndex + gap;
-    console.log("next firstIndex", firstIndex, "lastIndex", lastIndex);
+    // console.log("next firstIndex", firstIndex, "lastIndex", lastIndex);
     showBtn();
     sliderItem[lastIndex].scrollIntoView(true);
 };
@@ -118,7 +118,7 @@ const nextItem = () => {
 const prevItem = () => {
     firstIndex--;
     lastIndex = firstIndex + gap;
-    console.log("prev firstIndex", firstIndex, "lastIndex", lastIndex);
+    // console.log("prev firstIndex", firstIndex, "lastIndex", lastIndex);
     showBtn();
     sliderItem[firstIndex].scrollIntoView(true);
 };

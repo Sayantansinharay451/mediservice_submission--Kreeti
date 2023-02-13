@@ -63,7 +63,7 @@ nav {
     width: 100%;
     position: fixed;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     left: 0;
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.462);
@@ -71,8 +71,7 @@ nav {
 }
 
 nav > img {
-    width: 40vmin;
-    margin-bottom: auto;
+    width: 50%;
 }
 
 nav::before {
@@ -96,9 +95,10 @@ nav::before {
 }
 
 .Nav__control {
-    margin-left: auto;
-    height: 50px;
     position: relative;
+    margin-left: auto;
+    position: relative;
+    height: 24px;
     top: 0;
     left: 0;
     background: none;
@@ -118,6 +118,10 @@ nav::before {
 }
 
 .Nav__control::before {
+    position: absolute;
+    top: 0;
+    /* transform: translateY(-50%); */
+    right: 0;
     display: inline-block;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -135,13 +139,15 @@ nav::before {
     align-items: flex-start;
     justify-content: space-between;
     list-style: none;
-    gap: 40px;
     padding-right: 30px;
-    transition: height 200ms linear, opacity 300ms linear;
+    padding-top: 30px;
+    /* gap: 30px; */
+    transition: all 200ms ease-in-out;
 }
 
 .Nav__menu--close {
-    height: 0;
+    padding-top: 0px;
+    height: 0px;
     opacity: 0;
 }
 
@@ -167,6 +173,13 @@ nav a {
 .Nav__item:hover {
     font-weight: 600;
     text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1440px;
 }
 
 .About {
@@ -268,7 +281,6 @@ nav a {
     align-items: center;
     padding: 0 20px;
     justify-content: space-between;
-    /* gap: 20px; */
 }
 
 .Department__items {
@@ -326,6 +338,11 @@ footer {
     .Highlight__heading {
         font-size: 36px;
     }
+
+    nav > img {
+        width: unset;
+    }
+
     .Department__item {
         flex: 0 0 50%;
     }
@@ -349,16 +366,17 @@ footer {
         display: none;
     }
 
-    .Nav__main > ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
     .Nav__menu {
+        display: flex;
+        height: 100%;
+        opacity: 100;
         transition: none;
         transform: translateY(0);
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
     }
+
     .About {
         flex-direction: row;
         align-items: center;

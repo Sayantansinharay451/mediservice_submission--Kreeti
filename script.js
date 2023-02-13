@@ -14,7 +14,7 @@ const sliderItem = document.querySelectorAll(".Department__item");
 const links = document.querySelectorAll(".Nav__main a");
 
 links.forEach((ele) => {
-    const hrefId = ele.getAttribute("href").slice(1);
+    const hrefId = ele.getAttribute("href");
     if (hrefId !== "#") {
         const element = document.querySelector(hrefId);
         const paddingTop = window

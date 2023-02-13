@@ -50,11 +50,13 @@ navControl.addEventListener("click", (ele) => {
     ele.target.classList.toggle("Nav--open");
     ele.target.classList.toggle("Nav--close");
     navMenu.classList.toggle("Nav__menu--open");
+    navMenu.classList.toggle("Nav__menu--close");
 });
 
 window.addEventListener("scroll", () => {
-    if (navControl.classList.contains("Nav--close")) {
+    if (navControl.classList.contains("Nav--open")) {
         navMenu.classList.toggle("Nav__menu--open");
+        navMenu.classList.toggle("Nav__menu--close");
         navControl.classList.toggle("Nav--close");
         navControl.classList.toggle("Nav--open");
     }

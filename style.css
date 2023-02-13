@@ -15,7 +15,7 @@ body {
 
 .Highlight {
     width: 100%;
-    z-index: 10;
+    z-index: 100;
     background-color: white;
     position: sticky;
     top: 0;
@@ -37,6 +37,11 @@ body {
     border-radius: 10000px;
     color: white;
     background-color: var(--color-blue-main);
+    transition: 200ms ease-out transform;
+}
+
+.Highlight > button:hover {
+    transform: scale(1.05);
 }
 
 .Highlight__heading {
@@ -62,10 +67,11 @@ nav {
     justify-content: space-between;
     left: 0;
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.462);
+    transition: height 5s linear;
 }
 
 nav > img {
-    width: 50vmin;
+    width: 40vmin;
     margin-bottom: auto;
 }
 
@@ -79,10 +85,11 @@ nav::before {
     opacity: var(--opacity, 0.5);
     top: 0;
     left: 0;
-    transition: 200ms ease-in-out all;
+    transition: 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275) opacity;
 }
 
 .Nav__main {
+    /* height: fit-content; */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -97,6 +104,9 @@ nav::before {
     background: none;
     border: none;
     cursor: pointer;
+}
+.Nav__control::before {
+    transition: transform 200ms ease;
 }
 
 .Nav__control.Nav--close::before {
@@ -118,19 +128,28 @@ nav::before {
 }
 
 .Nav__menu {
+    position: relative;
+    z-index: 10;
+    display: flex;
     margin-left: auto;
     text-transform: uppercase;
-    transition: 10s ease-in-out height;
-    display: none;
     flex-direction: column;
     align-items: flex-start;
     list-style: none;
     gap: 40px;
     padding-right: 30px;
+    transform: translateY(-200%);
+    transition: transform 500ms linear;
+}
+
+.Nav__menu--close {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-200%);
 }
 
 .Nav__menu--open {
-    display: flex;
+    transform: translateY(0);
 }
 
 nav a {
@@ -141,6 +160,7 @@ nav a {
 }
 
 .Nav__item {
+    color: white;
     font-weight: 300;
     cursor: pointer;
     text-decoration: none;
@@ -220,6 +240,7 @@ nav a {
 
 .Department > h2 {
     margin: 0 auto;
+    width: -moz-fit-content;
     width: fit-content;
     position: relative;
     font-weight: 500;
@@ -336,6 +357,10 @@ footer {
         align-items: center;
     }
 
+    .Nav__menu {
+        transition: none;
+        transform: translateY(0);
+    }
     .About {
         flex-direction: row;
         align-items: center;

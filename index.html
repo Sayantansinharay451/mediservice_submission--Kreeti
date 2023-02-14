@@ -18,28 +18,30 @@
         <script defer src="script.js"></script>
     </head>
     <body>
-        <section class="Highlight">
+        <div class="highlight">
             <button type="button">Make an appointment</button>
-            <span class="Highlight__heading">24 Hours open</span>
-        </section>
+            <span class="highlight__heading">24 Hours open</span>
+        </div>
         <header>
             <nav>
                 <img src="assets/logo.png" alt="Logo" />
-                <div class="Nav__main">
+                <div class="nav nav__main">
                     <button
                         type="button"
-                        class="Nav__control Nav--close"
-                        aria-label="Nav control"
+                        class="nav-mobile__Control nav__trigger nav__trigger--close"
+                        aria-label="navigation control"
                     ></button>
-                    <ul class="Nav__menu Nav__menu--close">
-                        <li class="Nav__item">
-                            <a href="#">home</a>
+                    <ul class="nav__menu nav__menu--close">
+                        <li class="nav__menuItem">
+                            <a href="#" class="nav__link">home</a>
                         </li>
-                        <li class="Nav__item">
+                        <li class="nav__menuItem">
                             <a href="#services">services</a>
                         </li>
-                        <li class="Nav__item"><a href="#about">about</a></li>
-                        <li class="Nav__item">
+                        <li class="nav__menuItem">
+                            <a href="#about">about</a>
+                        </li>
+                        <li class="nav__menuItem">
                             <a href="#contact">contact</a>
                         </li>
                     </ul>
@@ -47,11 +49,11 @@
             </nav>
         </header>
         <main>
-            <section class="About" id="about">
-                <img src="assets/stetho.png" alt="About image" />
-                <div class="About__content">
-                    <span class="About__title"> why choose us</span>
-                    <p class="About__text">
+            <section class="about" id="about">
+                <img src="assets/stetho.png" alt="about image" />
+                <div class="about__content">
+                    <h2 class="about__title">why choose us</h2>
+                    <p class="about__text">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Provident dolor dicta inventore neque cumque culpa
                         tenetur, nobis fuga corporis voluptatum dolorum,
@@ -70,66 +72,70 @@
                     </p>
                 </div>
             </section>
-            <section class="Feature">
-                <ul class="Feature__list">
-                    <li class="Feature__listItem">lorem ipsum</li>
-                    <li class="Feature__listItem">lorem ipsum</li>
-                    <li class="Feature__listItem">lorem ipsum</li>
-                    <li class="Feature__listItem">lorem ipsum</li>
+            <div class="feature">
+                <ul class="feature__list">
+                    <li class="feature__listItem">lorem ipsum</li>
+                    <li class="feature__listItem">lorem ipsum</li>
+                    <li class="feature__listItem">lorem ipsum</li>
+                    <li class="feature__listItem">lorem ipsum</li>
                 </ul>
-            </section>
-            <section class="Department" id="services">
+            </div>
+            <section class="department" id="services">
                 <h2>Our Department</h2>
-                <div>
-                    <button class="Department__itemButton Button--prev">
-                        <img src="assets/more.png" alt="More" />
+                <div class="department__carousel">
+                    <button
+                        class="carousel__controlButton carousel__control--prev"
+                    >
+                        <img src="assets/more.png" alt="previous item" />
                     </button>
-                    <ul class="Department__items">
-                        <li class="Department__item">
+                    <ul class="department__carouselList">
+                        <li class="carousel__item">
                             <img src="assets/medicine.png" alt="Medicine" />
                             <span>Medicine</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img src="assets/brain.png" alt="Neurology" />
                             <span>Neurology</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img
                                 src="assets/Gastroenterology_icon.png"
                                 alt="Gastrology"
                             />
                             <span>Gastrology</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img
                                 src="assets/cardiology-icon-png-14.png"
                                 alt="Cardiology"
                             /><span>Cardiology</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img src="assets/medicine.png" alt="Medicine" />
                             <span>Medicine</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img src="assets/brain.png" alt="Neurology" />
                             <span>Neurology</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img
                                 src="assets/Gastroenterology_icon.png"
                                 alt="Gastrology"
                             />
                             <span>Gastrology</span>
                         </li>
-                        <li class="Department__item">
+                        <li class="carousel__item">
                             <img
                                 src="assets/cardiology-icon-png-14.png"
                                 alt="Cardiology"
                             /><span>Cardiology</span>
                         </li>
                     </ul>
-                    <button class="Department__itemButton Button--next">
-                        <img src="assets/more.png" alt="More" />
+                    <button
+                        class="carousel__controlButton carousel__control--next"
+                    >
+                        <img src="assets/more.png" alt="next item" />
                     </button>
                 </div>
             </section>

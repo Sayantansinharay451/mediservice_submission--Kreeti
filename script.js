@@ -1,17 +1,17 @@
-const highlight = document.querySelector(".Highlight");
+const highlight = document.querySelector(".highlight");
 const nav = document.querySelector("nav");
 const header = document.querySelector("header");
-const navControl = document.querySelector(".Nav__control");
-const navMenu = document.querySelector(".Nav__menu");
+const navControl = document.querySelector(".nav__trigger");
+const navMenu = document.querySelector(".nav__menu");
 
-const nextBtn = document.querySelector(".Button--next");
-const prevBtn = document.querySelector(".Button--prev");
+const nextBtn = document.querySelector(".carousel__control--next");
+const prevBtn = document.querySelector(".carousel__control--prev");
 
-const department = document.querySelector(".Department");
-const slider = document.querySelector(".Department__items");
-const sliderItem = document.querySelectorAll(".Department__item");
+const department = document.querySelector(".department");
+const slider = document.querySelector(".department__carouselList");
+const sliderItem = document.querySelectorAll(".carousel__item");
 
-const links = document.querySelectorAll(".Nav__main a");
+const links = document.querySelectorAll(".nav__main a");
 
 links.forEach((ele) => {
     const hrefId = ele.getAttribute("href");
@@ -27,7 +27,6 @@ links.forEach((ele) => {
         }px`;
     }
 });
-
 const navObserver = new window.IntersectionObserver(
     ([entry]) => {
         if (entry.isIntersecting) {
@@ -47,18 +46,18 @@ const navObserver = new window.IntersectionObserver(
 navObserver.observe(header);
 
 navControl.addEventListener("click", (ele) => {
-    ele.target.classList.toggle("Nav--open");
-    ele.target.classList.toggle("Nav--close");
-    navMenu.classList.toggle("Nav__menu--open");
-    navMenu.classList.toggle("Nav__menu--close");
+    ele.target.classList.toggle("nav__trigger--open");
+    ele.target.classList.toggle("nav__trigger--close");
+    navMenu.classList.toggle("nav__menu--open");
+    navMenu.classList.toggle("nav__menu--close");
 });
 
 window.addEventListener("scroll", () => {
-    if (navControl.classList.contains("Nav--open")) {
-        navMenu.classList.toggle("Nav__menu--open");
-        navMenu.classList.toggle("Nav__menu--close");
-        navControl.classList.toggle("Nav--close");
-        navControl.classList.toggle("Nav--open");
+    if (navControl.classList.contains("nav__trigger--open")) {
+        navMenu.classList.toggle("nav__menu--open");
+        navMenu.classList.toggle("nav__menu--close");
+        navControl.classList.toggle("nav__trigger--close");
+        navControl.classList.toggle("nav__trigger--open");
     }
 });
 

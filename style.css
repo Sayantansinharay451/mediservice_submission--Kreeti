@@ -205,8 +205,8 @@ main {
     font-size: 18px;
     text-transform: capitalize;
     background: url(assets/tab.png) no-repeat left center;
-    line-height: 100px;
     padding-left: 40px;
+    line-height: 100px;
     white-space: nowrap;
 }
 .department {

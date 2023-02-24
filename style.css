@@ -285,10 +285,9 @@ main {
     visibility: hidden;
     transform: rotate(180deg);
 }
-hr {
-    border: var(--color-blue-main) dashed 2px;
-}
+
 footer {
+    border-top: var(--color-blue-main) dashed 2px;
     padding: 20px;
     text-align: center;
 }

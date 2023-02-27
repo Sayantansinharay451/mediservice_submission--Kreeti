@@ -6,8 +6,6 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-body {
     font-family: sans-serif;
 }
 .highlight {
@@ -44,7 +42,7 @@ body {
 }
 header {
     width: 100%;
-    height: 50vh;
+    height: 50vmin;
     background: url(assets/australian-medical-research-and-innovation-strategy-2021-26-and-the-related-priorities.png)
         center center no-repeat;
     background-size: cover;
@@ -55,13 +53,21 @@ nav {
     width: 100%;
     position: fixed;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     left: 0;
     box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.462);
     transition: height 5s linear;
 }
-nav > img {
+
+nav > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
     width: 50%;
 }
 nav::before {
@@ -87,6 +93,7 @@ nav::before {
     margin-left: auto;
     position: relative;
     height: 24px;
+    width: 24px;
     top: 0;
     left: 0;
     background: none;
@@ -114,14 +121,17 @@ nav::before {
     font-size: 24px;
 }
 .nav__menu {
+    position: relative;
+    top: 0;
+    left: 0;
     display: flex;
-    margin-left: auto;
+    margin-right: auto;
     text-transform: uppercase;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     list-style: none;
-    padding-right: 30px;
+    padding-left: 30px;
     padding-top: 30px;
     transition: all 200ms ease-in-out;
 }
@@ -161,8 +171,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 80px;
+    gap: 20px;
 }
+
+.about > img {
+    width: 30vmin;
+    height: auto;
+}
+
 .about__content {
     display: flex;
     flex-direction: column;
@@ -187,7 +203,7 @@ main {
     line-height: 30px;
 }
 .feature {
-    padding: 20px 0;
+    padding: 20px;
     display: flex;
 }
 .feature__list {
@@ -264,6 +280,7 @@ main {
     gap: 10px;
     width: 200px;
 }
+
 .carousel__item > img {
     height: 200px;
     width: auto;
@@ -297,9 +314,10 @@ footer {
     }
     nav {
         padding: 20px 50px;
+        flex-direction: row;
         align-items: center;
     }
-    nav > img {
+    nav img {
         width: unset;
     }
     .nav__trigger {
@@ -315,6 +333,15 @@ footer {
         align-items: center;
         gap: 20px;
     }
+
+    .about {
+        gap: 80px;
+    }
+
+    .about > img {
+        width: unset;
+    }
+
     .carousel__item {
         flex: 0 0 50%;
     }

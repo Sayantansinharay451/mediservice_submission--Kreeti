@@ -1,175 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="Cache-control" content="public" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Medi Services</title>
-        <link rel="icon" type="image/x-icon" href="assets/tab.png" />
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <script defer src="script.js"></script>
-    </head>
-    <body>
-        <div class="highlight">
-            <button class="highlight__button" type="button">
-                Make an appointment
-            </button>
-            <span class="highlight__heading">24 Hours open</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-control" content="public" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medi Services</title>
+    <link rel="icon" type="image/x-icon" href="assets/tab.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="highlight">
+      <button class="highlight__button" type="button">
+        Make an appointment
+      </button>
+      <span class="highlight__heading">24 Hours open</span>
+    </div>
+    <header>
+      <nav>
+        <div>
+          <img src="assets/logo.png" alt="Medi Services logo" />
+          <button
+            type="button"
+            class="nav-mobile__Control nav__trigger nav__trigger--close"
+            aria-label="navigation control"
+          ></button>
         </div>
-        <header>
-            <nav>
-                <div>
-                    <img src="assets/logo.png" alt="Medi Services logo" />
-                    <button
-                        type="button"
-                        class="nav-mobile__Control nav__trigger nav__trigger--close"
-                        aria-label="navigation control"
-                    ></button>
-                </div>
-                <!-- <div class="nav nav__main"> -->
-                <ul class="nav__menu nav__menu--close">
-                    <li class="nav__menuItem">
-                        <a href="#" class="nav__link">home</a>
-                    </li>
-                    <li class="nav__menuItem">
-                        <a href="#services">services</a>
-                    </li>
-                    <li class="nav__menuItem">
-                        <a href="#about">about</a>
-                    </li>
-                    <li class="nav__menuItem">
-                        <a href="#contact">contact</a>
-                    </li>
-                </ul>
-                <!-- </div> -->
-            </nav>
-        </header>
-        <main>
-            <section class="about" id="about">
-                <img src="assets/stetho.png" alt="A stethoscope" />
-                <div class="about__content">
-                    <h2 class="about__title">why choose us</h2>
-                    <p class="about__text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Provident dolor dicta inventore neque cumque culpa
-                        tenetur, nobis fuga corporis voluptatum dolorum,
-                        reprehenderit iste! Veritatis perspiciatis dignissimos
-                        dolore iure ducimus debitis autem recusandae aperiam vel
-                        ut architecto cupiditate necessitatibus blanditiis
-                        fugiat beatae suscipit ipsam, sapiente fugit laboriosam
-                        asperiores veniam! Minima veritatis ab earum aperiam
-                        incidunt itaque pariatur fugiat, quidem velit, a, minus
-                        perferendis facere alias voluptatem consequuntur
-                        praesentium vel possimus expedita! Assumenda, iste!
-                        Quasi asperiores quae eveniet ipsum esse itaque quaerat
-                        distinctio suscipit aspernatur magni eligendi excepturi
-                        cumque, laudantium inventore, illo tempora dignissimos
-                        aliquid! Quisquam voluptate quos sunt sed aspernatur ut.
-                    </p>
-                </div>
-            </section>
-            <div class="feature">
-                <ul class="feature__list">
-                    <li class="feature__listItem">
-                        <img src="assets/tab.png" />
-                        lorem ipsum
-                    </li>
-                    <li class="feature__listItem">
-                        <img src="assets/tab.png" />
-                        lorem ipsum
-                    </li>
-                    <li class="feature__listItem">
-                        <img src="assets/tab.png" />
-                        lorem ipsum
-                    </li>
-                    <li class="feature__listItem">
-                        <img src="assets/tab.png" />
-                        lorem ipsum
-                    </li>
-                </ul>
-            </div>
-            <section class="department" id="services">
-                <h2>Our Department</h2>
-                <div class="department__carousel">
-                    <button
-                        class="carousel__controlButton carousel__control--prev"
-                    >
-                        <img src="assets/more.png" alt="go to previous item" />
-                    </button>
-                    <ul class="department__carouselList">
-                        <li class="carousel__item">
-                            <img
-                                src="assets/medicine.png"
-                                alt="Medicine department"
-                            />
-                            <span>Medicine</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/brain.png"
-                                alt="Neurology department"
-                            />
-                            <span>Neurology</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/Gastroenterology_icon.png"
-                                alt="Gastrology department"
-                            />
-                            <span>Gastrology</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/cardiology-icon-png-14.png"
-                                alt="Cardiology department"
-                            /><span>Cardiology</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/medicine.png"
-                                alt="Medicine department"
-                            />
-                            <span>Medicine</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/brain.png"
-                                alt="Neurology department"
-                            />
-                            <span>Neurology</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/Gastroenterology_icon.png"
-                                alt="Gastrology department"
-                            />
-                            <span>Gastrology</span>
-                        </li>
-                        <li class="carousel__item">
-                            <img
-                                src="assets/cardiology-icon-png-14.png"
-                                alt="Cardiology department"
-                            /><span>Cardiology</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="carousel__controlButton carousel__control--next"
-                    >
-                        <img src="assets/more.png" alt="go to next item" />
-                    </button>
-                </div>
-            </section>
-        </main>
-        <footer id="contact">
-            Copyright &copy; 2019 yummy crossing. All rights reserved.
-        </footer>
-    </body>
+        <ul class="nav__menu nav__menu--close">
+          <li class="nav__menuItem">
+            <a href="#" class="nav__link">home</a>
+          </li>
+          <li class="nav__menuItem">
+            <a href="#services">services</a>
+          </li>
+          <li class="nav__menuItem">
+            <a href="#about">about</a>
+          </li>
+          <li class="nav__menuItem">
+            <a href="#contact">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="about" id="about">
+        <img src="assets/stetho.png" alt="A stethoscope" />
+        <div class="about__content">
+          <h2 class="about__title">why choose us</h2>
+          <p class="about__text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident
+            dolor dicta inventore neque cumque culpa tenetur, nobis fuga
+            corporis voluptatum dolorum, reprehenderit iste! Veritatis
+            perspiciatis dignissimos dolore iure ducimus debitis autem
+            recusandae aperiam vel ut architecto cupiditate necessitatibus
+            blanditiis fugiat beatae suscipit ipsam, sapiente fugit laboriosam
+            asperiores veniam! Minima veritatis ab earum aperiam incidunt itaque
+            pariatur fugiat, quidem velit, a, minus perferendis facere alias
+            voluptatem consequuntur praesentium vel possimus expedita!
+            Assumenda, iste! Quasi asperiores quae eveniet ipsum esse itaque
+            quaerat distinctio suscipit aspernatur magni eligendi excepturi
+            cumque, laudantium inventore, illo tempora dignissimos aliquid!
+            Quisquam voluptate quos sunt sed aspernatur ut.
+          </p>
+        </div>
+      </section>
+      <div class="feature">
+        <ul class="feature__list">
+          <li class="feature__listItem">
+            <img src="assets/tab.png" />
+            lorem ipsum
+          </li>
+          <li class="feature__listItem">
+            <img src="assets/tab.png" />
+            lorem ipsum
+          </li>
+          <li class="feature__listItem">
+            <img src="assets/tab.png" />
+            lorem ipsum
+          </li>
+          <li class="feature__listItem">
+            <img src="assets/tab.png" />
+            lorem ipsum
+          </li>
+        </ul>
+      </div>
+      <section class="department" id="services">
+        <h2>Our Department</h2>
+        <div class="department__carousel">
+          <button class="carousel__controlButton carousel__control--prev">
+            <img src="assets/more.png" alt="go to previous item" />
+          </button>
+          <ul class="department__carouselList">
+            <li class="carousel__item">
+              <img src="assets/medicine.png" alt="Medicine department" />
+              <span>Medicine</span>
+            </li>
+            <li class="carousel__item">
+              <img src="assets/brain.png" alt="Neurology department" />
+              <span>Neurology</span>
+            </li>
+            <li class="carousel__item">
+              <img
+                src="assets/Gastroenterology_icon.png"
+                alt="Gastrology department"
+              />
+              <span>Gastrology</span>
+            </li>
+            <li class="carousel__item">
+              <img
+                src="assets/cardiology-icon-png-14.png"
+                alt="Cardiology department"
+              /><span>Cardiology</span>
+            </li>
+            <li class="carousel__item">
+              <img src="assets/medicine.png" alt="Medicine department" />
+              <span>Medicine</span>
+            </li>
+            <li class="carousel__item">
+              <img src="assets/brain.png" alt="Neurology department" />
+              <span>Neurology</span>
+            </li>
+            <li class="carousel__item">
+              <img
+                src="assets/Gastroenterology_icon.png"
+                alt="Gastrology department"
+              />
+              <span>Gastrology</span>
+            </li>
+            <li class="carousel__item">
+              <img
+                src="assets/cardiology-icon-png-14.png"
+                alt="Cardiology department"
+              /><span>Cardiology</span>
+            </li>
+          </ul>
+          <button class="carousel__controlButton carousel__control--next">
+            <img src="assets/more.png" alt="go to next item" />
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      Copyright &copy; 2019 yummy crossing. All rights reserved.
+    </footer>
+  </body>
 </html>
+indentation

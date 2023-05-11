@@ -11,7 +11,7 @@ const department = document.querySelector(".department");
 const slider = document.querySelector(".department__carouselList");
 const sliderItem = document.querySelectorAll(".carousel__item");
 
-const links = document.querySelectorAll(".nav__main a");
+const links = document.querySelectorAll(".nav__menu a");
 
 links.forEach((ele) => {
   const hrefId = ele.getAttribute("href");
@@ -21,12 +21,11 @@ links.forEach((ele) => {
       .getComputedStyle(element, null)
       .getPropertyValue("padding-top");
     element.style.scrollMarginTop = `${
-      highlight.clientHeight +
-      nav.clientHeight +
-      parseInt(paddingTop.slice(0, -2))
+      highlight.clientHeight + parseInt(paddingTop.slice(0, -2))
     }px`;
   }
 });
+
 const navObserver = new window.IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
@@ -65,12 +64,12 @@ let firstIndex = 0,
   lastIndex = 0;
 let gap = Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1;
 
-const showBtn = () => {
-  if (firstIndex === 0) prevBtn.style.visibility = "hidden";
-  else prevBtn.style.visibility = "visible";
-  if (lastIndex === sliderItem.length - 1) nextBtn.style.visibility = "hidden";
-  else nextBtn.style.visibility = "visible";
-};
+// const showBtn = () => {
+//   if (firstIndex === 0) prevBtn.style.visibility = "hidden";
+//   else prevBtn.style.visibility = "visible";
+//   if (lastIndex === sliderItem.length - 1) nextBtn.style.visibility = "hidden";
+//   else nextBtn.style.visibility = "visible";
+// };
 
 window.addEventListener("resize", () => {
   if (gap !== Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1) {
@@ -81,17 +80,16 @@ window.addEventListener("resize", () => {
     } else {
       lastIndex = firstIndex + gap;
     }
-    showBtn();
   }
-  // console.log(gap);
-  // console.log("firstIndex #", firstIndex);
-  // console.log("lastIndex #", lastIndex);
+
+  // if (window.innerHeight > document.querySelector("html").clientHeight) {
+  //   document.querySelector("footer").style()
+  // }
 });
 
 const sliderObserver = new window.IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
-      // console.log("firstIndex", firstIndex, "lastIndex", lastIndex);
       sliderItem[lastIndex].scrollIntoView(true);
       sliderItem[firstIndex].scrollIntoView(true);
     }
@@ -102,21 +100,56 @@ const sliderObserver = new window.IntersectionObserver(
   }
 );
 
-const nextItem = () => {
-  firstIndex++;
-  lastIndex = firstIndex + gap;
-  // console.log("next firstIndex", firstIndex, "lastIndex", lastIndex);
-  showBtn();
-  sliderItem[lastIndex].scrollIntoView(true);
-};
+// const nextItem = () => {
+//   firstIndex++;
+//   lastIndex = (firstIndex + gap) % sliderItem.length;
 
-const prevItem = () => {
-  firstIndex--;
+//   // console.log("firstIndex :", firstIndex)
+//   // console.log("lastIndex :", lastIndex)
+//   sliderItem[lastIndex].scrollIntoView(true);
+// };
+
+// const prevItem = () => {
+//   firstIndex--;
+//   showBtn();
+// };
+//
+
+const nextItem = () => {
+  const firstEle = sliderItem[firstIndex];
+  slider.removeChild(slider.firstChild);
+  slider.appendChild(firstEle);
+  firstIndex = (firstIndex + 1) % sliderItem.length;
   lastIndex = firstIndex + gap;
-  // console.log("prev firstIndex", firstIndex, "lastIndex", lastIndex);
-  showBtn();
-  sliderItem[firstIndex].scrollIntoView(true);
+  // sliderItem[lastIndex].scrollIntoView(true);
+  // console.log(sliderItem);
 };
 
 nextBtn.addEventListener("click", nextItem);
-prevBtn.addEventListener("click", prevItem);
+// prevBtn.addEventListener("click", prevItem);
+
+$(document).ready(function () {
+  $("nav").css("top", highlight.clientHeight);
+  if (window.innerHeight > parseInt($("body").css("height").slice(0, -2))) {
+    $("footer").css({
+      position: "fixed",
+    });
+  } else {
+    $("footer").css({
+      position: "relative",
+    });
+  }
+});
+
+$(window).resize(function () {
+  $("nav").css("top", highlight.clientHeight);
+  if (window.innerHeight > parseInt($("body").css("height").slice(0, -2))) {
+    $("footer").css({
+      position: "fixed",
+    });
+  } else {
+    $("footer").css({
+      position: "relative",
+    });
+  }
+});

@@ -15,40 +15,55 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="highlight">
-      <button class="highlight__button" type="button">
-        Make an appointment
-      </button>
-      <span class="highlight__heading">24 Hours open</span>
-    </div>
     <header>
-      <nav>
-        <div>
-          <img src="assets/logo.png" alt="Medi Services logo" />
-          <button
-            type="button"
-            class="nav-mobile__Control nav__trigger nav__trigger--close"
-            aria-label="navigation control"
-          ></button>
+      <div class="highlight">
+        <div class="highlight__content">
+          <button class="highlight__button" type="button">
+            Make an appointment
+          </button>
+          <span class="highlight__heading">24 Hours open</span>
         </div>
-        <ul class="nav__menu nav__menu--close">
-          <li class="nav__menuItem">
-            <a href="#" class="nav__link">home</a>
-          </li>
-          <li class="nav__menuItem">
-            <a href="#services">services</a>
-          </li>
-          <li class="nav__menuItem">
-            <a href="#about">about</a>
-          </li>
-          <li class="nav__menuItem">
-            <a href="#contact">contact</a>
-          </li>
-        </ul>
-      </nav>
+      </div>
+      <section class="hero">
+        <nav>
+          <div class="nav__content">
+            <div class="nav__actions">
+              <a href="#">
+                <img src="assets/logo.png" alt="Medi Services logo" />
+              </a>
+              <button
+                type="button"
+                class="nav-mobile__Control nav__trigger nav__trigger--close"
+                aria-label="navigation control"
+              ></button>
+            </div>
+
+            <ul class="nav__menu nav__menu--close">
+              <li class="nav__menuItem">
+                <a href="#" class="nav__link">home</a>
+              </li>
+              <li class="nav__menuItem">
+                <a href="#services">services</a>
+              </li>
+              <li class="nav__menuItem">
+                <a href="#about">about</a>
+              </li>
+              <li class="nav__menuItem">
+                <a href="#contact">contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
     </header>
     <main>
       <section class="about" id="about">
@@ -68,7 +83,6 @@
             Assumenda, iste! Quasi asperiores quae eveniet ipsum esse itaque
             quaerat distinctio suscipit aspernatur magni eligendi excepturi
             cumque, laudantium inventore, illo tempora dignissimos aliquid!
-            Quisquam voluptate quos sunt sed aspernatur ut.
           </p>
         </div>
       </section>
@@ -95,9 +109,6 @@
       <section class="department" id="services">
         <h2>Our Department</h2>
         <div class="department__carousel">
-          <button class="carousel__controlButton carousel__control--prev">
-            <img src="assets/more.png" alt="go to previous item" />
-          </button>
           <ul class="department__carouselList">
             <li class="carousel__item">
               <img src="assets/medicine.png" alt="Medicine department" />
@@ -153,4 +164,3 @@
     </footer>
   </body>
 </html>
-indentation

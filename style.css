@@ -202,7 +202,7 @@ main {
   line-height: 30px;
 }
 .feature {
-  padding: 20px;
+  padding: 50px;
   display: flex;
 }
 .feature__list {
@@ -213,7 +213,7 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px 10vw;
+  gap: 20px 8vw;
 }
 .feature__listItem {
   font-weight: 500;
@@ -227,6 +227,11 @@ main {
   line-height: 100px;
   white-space: nowrap;
 }
+
+.feature__listItem > img {
+  height: 40px;
+  width: auto;
+}
 .department {
   width: 100%;
   padding: 40px 0;
@@ -239,7 +244,7 @@ main {
   width: fit-content;
   position: relative;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 36px;
   color: var(--color-blue-main);
 }
 .department > h2::after,
@@ -267,9 +272,12 @@ main {
   user-select: none;
 }
 .department__carouselList {
-  overflow: hidden;
   display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
   list-style: none;
+  /* transition: all 5s ease-out; */
+  flex-wrap: nowrap;
 }
 .carousel__item {
   flex: 1 0 100%;
@@ -279,10 +287,16 @@ main {
   align-items: center;
   gap: 10px;
   width: 200px;
+  transition: all 1s ease-out;
+  opacity: 1;
+}
+
+.carousel__item.delete {
+  opacity: 0;
 }
 
 .carousel__item > img {
-  height: 200px;
+  height: 150px;
   width: auto;
 }
 .carousel__item > span {
@@ -296,7 +310,8 @@ main {
   cursor: pointer;
 }
 .carousel__controlButton > img {
-  /* width: 10vmin; */
+  width: 75px;
+  height: auto;
 }
 .carousel__control--prev {
   visibility: hidden;

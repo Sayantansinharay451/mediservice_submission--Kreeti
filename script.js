@@ -117,10 +117,15 @@ const sliderObserver = new window.IntersectionObserver(
 
 const nextItem = () => {
   const firstEle = sliderItem[firstIndex];
-  slider.removeChild(slider.firstChild);
-  slider.appendChild(firstEle);
+  firstEle.classList.add("delete");
+  setTimeout(() => {
+    slider.removeChild(slider.firstChild);
+    console.log(firstIndex, lastIndex);
+    slider.appendChild(firstEle);
+    firstEle.classList.remove("delete");
+  }, 500);
   firstIndex = (firstIndex + 1) % sliderItem.length;
-  lastIndex = firstIndex + gap;
+  lastIndex = (firstIndex + gap - 1) % sliderItem.length;
   // sliderItem[lastIndex].scrollIntoView(true);
   // console.log(sliderItem);
 };

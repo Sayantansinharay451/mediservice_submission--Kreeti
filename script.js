@@ -64,13 +64,6 @@ let firstIndex = 0,
   lastIndex = 0;
 let gap = Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1;
 
-// const showBtn = () => {
-//   if (firstIndex === 0) prevBtn.style.visibility = "hidden";
-//   else prevBtn.style.visibility = "visible";
-//   if (lastIndex === sliderItem.length - 1) nextBtn.style.visibility = "hidden";
-//   else nextBtn.style.visibility = "visible";
-// };
-
 window.addEventListener("resize", () => {
   if (gap !== Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1) {
     gap = Math.round(slider.clientWidth / sliderItem[0].clientWidth) - 1;
@@ -81,10 +74,6 @@ window.addEventListener("resize", () => {
       lastIndex = firstIndex + gap;
     }
   }
-
-  // if (window.innerHeight > document.querySelector("html").clientHeight) {
-  //   document.querySelector("footer").style()
-  // }
 });
 
 const sliderObserver = new window.IntersectionObserver(
@@ -100,21 +89,6 @@ const sliderObserver = new window.IntersectionObserver(
   }
 );
 
-// const nextItem = () => {
-//   firstIndex++;
-//   lastIndex = (firstIndex + gap) % sliderItem.length;
-
-//   // console.log("firstIndex :", firstIndex)
-//   // console.log("lastIndex :", lastIndex)
-//   sliderItem[lastIndex].scrollIntoView(true);
-// };
-
-// const prevItem = () => {
-//   firstIndex--;
-//   showBtn();
-// };
-//
-
 const nextItem = () => {
   const firstEle = sliderItem[firstIndex];
   firstEle.classList.add("delete");
@@ -126,15 +100,15 @@ const nextItem = () => {
   }, 500);
   firstIndex = (firstIndex + 1) % sliderItem.length;
   lastIndex = (firstIndex + gap - 1) % sliderItem.length;
-  // sliderItem[lastIndex].scrollIntoView(true);
-  // console.log(sliderItem);
 };
 
 nextBtn.addEventListener("click", nextItem);
-// prevBtn.addEventListener("click", prevItem);
 
-$(document).ready(function () {
+const setNavHeight = () => {
   $("nav").css("top", highlight.clientHeight);
+};
+
+const setFooterPosition = () => {
   if (window.innerHeight > parseInt($("body").css("height").slice(0, -2))) {
     $("footer").css({
       position: "fixed",
@@ -144,17 +118,25 @@ $(document).ready(function () {
       position: "relative",
     });
   }
+};
+
+const setAboutMargin = () => {
+  const eleMargin = parseInt($(".about").css("scroll-margin-top").slice(0, -2));
+  if (window.innerWidth < 768) {
+    $(".about").css("margin-top", eleMargin);
+  } else {
+    $(".about").css("margin-top", 0);
+  }
+};
+
+$(document).ready(function () {
+  setNavHeight();
+  setFooterPosition();
+  setAboutMargin();
 });
 
 $(window).resize(function () {
-  $("nav").css("top", highlight.clientHeight);
-  if (window.innerHeight > parseInt($("body").css("height").slice(0, -2))) {
-    $("footer").css({
-      position: "fixed",
-    });
-  } else {
-    $("footer").css({
-      position: "relative",
-    });
-  }
+  setNavHeight();
+  setFooterPosition();
+  setAboutMargin();
 });

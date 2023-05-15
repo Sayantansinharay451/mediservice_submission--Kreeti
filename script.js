@@ -93,7 +93,6 @@ const nextItem = () => {
   firstEle.classList.add("delete");
   setTimeout(() => {
     slider.removeChild(slider.firstChild);
-    console.log(firstIndex, lastIndex);
     slider.appendChild(firstEle);
     firstEle.classList.remove("delete");
   }, 500);

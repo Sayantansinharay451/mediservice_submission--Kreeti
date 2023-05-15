@@ -118,23 +118,19 @@ const setFooterPosition = () => {
   }
 };
 
-const setAboutMargin = () => {
-  const eleMargin = parseInt($(".about").css("scroll-margin-top").slice(0, -2));
-  if (window.innerWidth < 768) {
-    $(".about").css("margin-top", eleMargin);
-  } else {
-    $(".about").css("margin-top", 0);
-  }
+const setTopMargin = () => {
+  const eleTopMargin = highlight.offsetHeight;
+  $(".hero").css("margin-top", eleTopMargin);
 };
 
 $(document).ready(function () {
   setNavHeight();
   setFooterPosition();
-  setAboutMargin();
+  setTopMargin();
 });
 
 $(window).resize(function () {
   setNavHeight();
   setFooterPosition();
-  setAboutMargin();
+  setTopMargin();
 });

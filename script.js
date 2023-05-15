@@ -5,7 +5,6 @@ const navControl = document.querySelector(".nav__trigger");
 const navMenu = document.querySelector(".nav__menu");
 
 const nextBtn = document.querySelector(".carousel__control--next");
-const prevBtn = document.querySelector(".carousel__control--prev");
 
 const department = document.querySelector(".department");
 const slider = document.querySelector(".department__carouselList");

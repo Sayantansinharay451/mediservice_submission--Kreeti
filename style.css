@@ -180,18 +180,24 @@ main {
   color: #131313;
   position: relative;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 50px;
   font-size: 36px;
 }
 .about__title::after {
   position: absolute;
-  content: url(assets/ecg.png);
-  padding-left: 10px;
+  background: url(assets/ecg.png) center center no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  content: "";
+  margin-left: 20px;
   bottom: 0;
 }
 .about__text {
-  font-weight: 300;
-  font-size: larger;
+  font-weight: 400;
+  font-size: medium;
   line-height: 30px;
 }
 .feature {
@@ -207,7 +213,7 @@ main {
   gap: 20px 8vw;
 }
 .feature__listItem {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   text-transform: capitalize;
   display: flex;
@@ -231,32 +237,37 @@ main {
   margin: 0 auto;
   width: fit-content;
   position: relative;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 20px;
   color: var(--color-blue-main);
 }
 .department > h2::after,
 .department > h2::before {
   position: absolute;
-  z-index: 9;
-  content: url(assets/ecg.png);
+  background: url(assets/ecg.png) center center no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  content: "";
   top: 0;
 }
 .department > h2::after {
-  right: -60px;
+  right: -35px;
 }
 .department > h2::before {
-  left: -60px;
+  left: -35px;
 }
 .department > div {
   width: 100%;
   display: flex;
   height: 300px;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 10px;
   justify-content: space-between;
 }
 .department__carousel {
+  display: flex;
   user-select: none;
 }
 .department__carouselList {
@@ -319,12 +330,7 @@ footer > span {
     font-size: 36px;
   }
   .hero {
-    background: url(assets/australian-medical-research-and-innovation-strategy-2021-26-and-the-related-priorities.png)
-      center center no-repeat;
-    background-size: cover;
-    width: 100%;
     height: 70vmin;
-    background-size: cover;
   }
   nav {
     padding: 20px 50px;
@@ -369,6 +375,16 @@ footer > span {
   .department > h2 {
     font-size: 36px;
   }
+  .department > h2::after,
+  .department > h2::before {
+    width: 60px;
+  }
+  .department > h2::after {
+    right: -70px;
+  }
+  .department > h2::before {
+    left: -70px;
+  }
   .carousel__item {
     flex: 0 0 50%;
   }
@@ -381,11 +397,15 @@ footer > span {
     gap: 40px;
   }
   .about {
+    position: relative;
     flex-direction: row;
     align-items: start;
   }
   .department > div {
     gap: 40px;
+  }
+  .department > h2 {
+    font-size: 36px;
   }
   .carousel__item {
     flex: 1 0 33.33%;

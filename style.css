@@ -189,10 +189,10 @@ main {
   background: url(assets/ecg.png) center center no-repeat;
   background-size: contain;
   display: inline-block;
-  width: 40px;
+  width: 35px;
   height: 50px;
   content: "";
-  margin-left: 10px;
+  margin-left: 8px;
   bottom: 0;
 }
 .about__text {

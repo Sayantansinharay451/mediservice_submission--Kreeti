@@ -210,7 +210,7 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px 8vw;
+  gap: 0px 10vw;
 }
 .feature__listItem {
   font-weight: 400;
@@ -404,6 +404,9 @@ footer > span {
     flex-direction: row;
     align-items: start;
   }
+  .feature__list {
+    gap: 0px 5vw;
+  }
   .department > div {
     gap: 40px;
   }
@@ -417,5 +420,8 @@ footer > span {
 @media screen and (min-width: 1440px) {
   .carousel__item {
     flex: 1 0 25%;
+  }
+  .feature__list {
+    gap: 0px 8vw;
   }
 }

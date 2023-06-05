@@ -197,11 +197,11 @@ main {
 }
 .about__text {
   font-weight: 400;
-  font-size: medium;
+  font-size: large;
   line-height: 30px;
 }
 .feature {
-  padding: 50px;
+  /* padding: 30px; */
   display: flex;
 }
 .feature__list {
@@ -228,7 +228,7 @@ main {
 }
 .department {
   width: 100%;
-  padding: 40px 0;
+  /* padding: 40px 0; */
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -321,7 +321,7 @@ footer {
   bottom: 0;
 }
 footer > span {
-  font-size: medium;
+  font-size: small;
   color: #2c2c2c;
   font-weight: 200;
 }

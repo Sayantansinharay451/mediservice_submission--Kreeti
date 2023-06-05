@@ -102,10 +102,6 @@ const nextItem = () => {
 
 nextBtn.addEventListener("click", nextItem);
 
-const setNavHeight = () => {
-  $("nav").css("top", highlight.clientHeight);
-};
-
 const setFooterPosition = () => {
   if (window.innerHeight > parseInt($("body").css("height").slice(0, -2))) {
     $("footer").css({
@@ -118,19 +114,10 @@ const setFooterPosition = () => {
   }
 };
 
-const setTopMargin = () => {
-  const eleTopMargin = highlight.offsetHeight;
-  $(".hero").css("margin-top", eleTopMargin);
-};
-
 $(document).ready(function () {
-  // setNavHeight();
   setFooterPosition();
-  // setTopMargin();
 });
 
 $(window).resize(function () {
-  // setNavHeight();
   setFooterPosition();
-  // setTopMargin();
 });

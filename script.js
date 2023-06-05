@@ -124,13 +124,13 @@ const setTopMargin = () => {
 };
 
 $(document).ready(function () {
-  setNavHeight();
+  // setNavHeight();
   setFooterPosition();
-  setTopMargin();
+  // setTopMargin();
 });
 
 $(window).resize(function () {
-  setNavHeight();
+  // setNavHeight();
   setFooterPosition();
-  setTopMargin();
+  // setTopMargin();
 });

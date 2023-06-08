@@ -200,7 +200,6 @@ main {
   line-height: 30px;
 }
 .feature {
-  /* padding: 30px; */
   display: flex;
 }
 .feature__list {
@@ -227,7 +226,6 @@ main {
 }
 .department {
   width: 100%;
-  /* padding: 40px 0; */
   display: flex;
   flex-direction: column;
   gap: 50px;

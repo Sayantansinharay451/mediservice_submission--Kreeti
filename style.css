@@ -213,7 +213,7 @@ main {
 }
 .feature__listItem {
   font-weight: 400;
-  font-size: 18px;
+  font-size: large;
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -278,7 +278,6 @@ main {
 }
 .carousel__item {
   flex: 1 0 100%;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,6 +367,11 @@ footer > span {
   .about__title {
     font-size: 42px;
   }
+
+  .about__text {
+    font-size: larger;
+  }
+
   .about__title::after {
     width: 60px;
   }
@@ -389,6 +393,9 @@ footer > span {
   }
   .carousel__item {
     flex: 0 0 50%;
+  }
+  footer > span {
+    font-size: medium;
   }
 }
 @media screen and (min-width: 1024px) {
